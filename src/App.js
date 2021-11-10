@@ -3,8 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
-import About from "./pages/About";
-import Product from "./pages/Product";
+import Offer from "./pages/Offer";
 
 const App = () => {
   const [data, setData] = useState();
@@ -14,7 +13,7 @@ const App = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://vinted-api-melanie.herokuapp.com/"
+          "https://lereacteur-vinted-api.herokuapp.com/offers"
         );
         console.log(response.data);
         setData(response.data);
@@ -33,17 +32,16 @@ const App = () => {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/"> Home Page</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/offer/:id"> Offre </Link>
           </li>
         </ul>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/product/:id" element={<Product />} />
+        <Route path="/offer/:id" element={<Offer />} />
       </Routes>
     </Router>
   );
