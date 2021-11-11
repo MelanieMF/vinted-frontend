@@ -11,13 +11,13 @@ const Header = () => {
         <input type="search" placeholder="Rechercher des articles" />
         <nav>
           <div className="header-items white-btn buttons">
-            <a href="#">S'inscrire</a>
+            <Link to="/">S'inscrire</Link>
           </div>
           <div className="header-items white-btn buttons">
-            <a href="#">Se connecter</a>
+            <Link to="/">Se connecter</Link>
           </div>
           <div className="header-items blue-btn buttons">
-            <a href="#">Vends tes articles</a>
+            <Link to="/">Vends tes articles</Link>
           </div>
         </nav>
       </header>

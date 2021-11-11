@@ -21,21 +21,33 @@ const Offer = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [id]);
 
   return isLoading ? (
     <p>En cours de chargement...</p>
   ) : (
     <div className="offer-container">
       <div>
-        <img src={data.product_image.secure_url} alt="photo de l'article" />
+        <img src={data.product_image.secure_url} alt="article" />
       </div>
       <div className="offer-product-container">
         <div>
           <h3>{data.product_price} €</h3>
           <section className="offer-product-description">
             <div className="offer-product-description-left">
-              <p>Marque</p>
+              <ul>
+                {data.product_details.map((elem, index) => {
+                  const keys = Object.keys(elem);
+                  return (
+                    <li key={index}>
+                      <span>{keys[0]}</span>
+                      <span>{elem[keys[0]]}</span>
+                    </li>
+                  );
+                })}
+              </ul>
+
+              {/* <p>Marque</p>
               <p>Taille</p>
               <p>État</p>
               <p>Couleur</p>
@@ -48,6 +60,7 @@ const Offer = () => {
               <p>{data.product_details[2].ÉTAT}</p>
               <p>{data.product_details[3].COULEUR}</p>
               <p>{data.product_details[4].EMPLACEMENT}</p>
+              */}
             </div>
           </section>
           <hr />
