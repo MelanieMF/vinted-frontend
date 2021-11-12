@@ -1,10 +1,10 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
-import "./SignUp.css";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+// import "./Login.css";
+// import Cookies from "js-cookie";
 
-const SignUp = ({ setUser }) => {
-  const [username, setUsername] = useState("");
+const Login = ({ setUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -14,11 +14,6 @@ const SignUp = ({ setUser }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     fetchData();
-  };
-
-  const handleName = (event) => {
-    const value = event.target.value;
-    setUsername(value);
   };
 
   const handleEmail = (event) => {
@@ -34,27 +29,23 @@ const SignUp = ({ setUser }) => {
   const fetchData = async () => {
     try {
       const response = await axios.post(
-        "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+        "https://lereacteur-vinted-api.herokuapp.com/user/login",
         {
-          username: username,
           email: email,
           password: password,
         }
       );
-      // console.log(response.data);
-      // setData(response.data);
-      // const token = response.data.token;
-      // Cookies.set("token", token);
       if (response.data.token) {
         setUser(response.data.token);
         navigate("/");
       }
+      // console.log(response.data);
     } catch (error) {
       console.log(error.response);
       console.log(error.message);
-      if (error.response.status === 409) {
-        setErrorMessage("Cet email a déjà un compte");
-      }
+      // if (error.response.status === 401) {
+      //   setErrorMessage("Mauvais email et/ou mot de passe");
+      // }
     }
   };
 
@@ -62,16 +53,8 @@ const SignUp = ({ setUser }) => {
     <main>
       <div className="container">
         <div className="form">
-          <h1>S'inscrire</h1>
+          <h1>Se connecter</h1>
           <form onSubmit={handleSubmit}>
-            <div>
-              <input
-                onChange={handleName}
-                placeholder="Nom d'utilisateur"
-                type="text"
-                value={username}
-              />
-            </div>
             <div>
               <input
                 onChange={handleEmail}
@@ -83,24 +66,18 @@ const SignUp = ({ setUser }) => {
             <div>
               <input
                 onChange={handlePassword}
-                placeholder="Password"
+                placeholder="Mot de passe"
                 type="password"
                 value={password}
               />
             </div>
-
-            <span>
-              <input type="checkbox" />
-              S'inscrire à notre newsletter
-            </span>
+            <div></div>
             <div>
-              <p>
-                En m'inscrivant, je confirme que j'ai accepté les Termes et
-                Conditions de Vinted, avoir lu la Politique de Confidentialité,
-                et que j'ai plus de 18 ans.
-              </p>
-              <input type="submit" value="S'inscrire" />
-              <p>Tu as déjà un compte ? Connecte-toi !</p>
+              <input type="submit" value="Se connecter" />
+              <span style={{ color: "red" }}>{errorMessage}</span>
+              {/* a styliser dans CSS */}
+              <p>J'ai oublié mon mot de passe</p>
+              <p>Un problème ?</p>
             </div>
           </form>
         </div>
@@ -109,4 +86,4 @@ const SignUp = ({ setUser }) => {
   );
 };
 
-export default SignUp;
+export default Login;

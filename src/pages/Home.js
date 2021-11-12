@@ -31,7 +31,7 @@ const Home = () => {
       <div className="accroche-container">
         <h1>Prêts à faire du tri dans vos placards ?</h1>
         <button className="accroche-container-btn button">
-          Commencer à vendre
+          <Link to="/signup">Commencer à vendre</Link>
         </button>
       </div>
       <div className="container">

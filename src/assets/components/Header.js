@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../img/logo-vinted.png";
+import "./Header.css";
 
 const Header = () => {
   return (
@@ -11,13 +12,13 @@ const Header = () => {
         <input type="search" placeholder="Rechercher des articles" />
         <nav>
           <div className="header-items white-btn buttons">
-            <Link to="/">S'inscrire</Link>
+            <Link to="/signup">S'inscrire</Link>
           </div>
           <div className="header-items white-btn buttons">
-            <Link to="/">Se connecter</Link>
+            <Link to="/login">Se connecter</Link>
           </div>
           <div className="header-items blue-btn buttons">
-            <Link to="/">Vends tes articles</Link>
+            <Link to="/signup">Vends tes articles</Link>
           </div>
         </nav>
       </header>

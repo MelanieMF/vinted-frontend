@@ -1,0 +1,32 @@
+/* Header */
+.logo {
+  height: 50px;
+  width: 120px;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+input {
+  width: 300px;
+  padding: 8px;
+}
+
+header nav {
+  /* padding: 10px; */
+  display: flex;
+  align-items: center;
+  border: 1px solid red;
+}
+
+header nav a {
+  text-decoration: none;
+}
+
+.header-items {
+  border: 1px solid green;
+  margin: 0 20px;
+}
