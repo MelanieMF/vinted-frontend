@@ -14,7 +14,7 @@ form {
   border: 1px solid salmon;
 }
 
-input {
+.signup-form input {
   border: none;
   border-bottom: 1px solid #e0e0e0;
   margin: 20px;

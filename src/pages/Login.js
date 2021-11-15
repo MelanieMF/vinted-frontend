@@ -53,7 +53,7 @@ const Login = ({ setUser }) => {
     <main>
       <div className="container">
         <div className="form">
-          <h1>Se connecter</h1>
+          <h2>Se connecter</h2>
           <form onSubmit={handleSubmit}>
             <div>
               <input
