@@ -3,8 +3,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Main */
-
 .container {
   width: 1240px;
   margin: 0 auto;
@@ -15,6 +13,12 @@ body {
   width: 100%;
   object-fit: cover;
   position: relative;
+}
+
+.background2 {
+  position: absolute;
+  top: 27.5rem;
+  left: 0;
 }
 
 .accroche-container {
@@ -32,35 +36,6 @@ body {
   /* font-family: Arial; */
   font-weight: lighter;
   font-size: 34px;
-}
-
-/* BOUTON STYLE VINTED */
-
-.button {
-  background-color: #2ab1ba;
-  color: #fff;
-  width: 185px;
-  height: 45px;
-  /* padding: 15px; */
-  margin: 30px 0;
-  border-radius: 5px;
-  border: none;
-  font-size: 16px;
-}
-
-.buttons {
-  border-radius: 5px;
-  padding: 10px;
-}
-
-.white-btn {
-  color: #2ab1ba;
-  border: 1px solid #2ab1ba;
-}
-
-.blue-btn {
-  background-color: #2ab1ba;
-  color: #fff;
 }
 
 /* Conteneur des articles vinted */
@@ -125,12 +100,4 @@ body {
 .offer-product-description-left {
   margin-right: 20px;
   color: #c6c6c6;
-}
-
-/* Bouton, pour style principale voire section boutton plus haut */
-
-.offer-container-btn {
-  width: 300px;
-  height: 35px;
-  margin-top: 100px;
 }

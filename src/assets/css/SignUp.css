@@ -1,0 +1,63 @@
+main {
+  width: 1240px;
+  margin: auto;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  border: 1px solid salmon;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  margin: 20px;
+}
+
+::placeholder {
+  color: #cecece;
+  font-size: 16px;
+}
+
+.checkbox {
+  height: 25px;
+}
+
+.terms-container {
+  border: 3px solid sienna;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  position: relative;
+}
+/* 
+label {
+  border: 3px solid seagreen;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.newsletter {
+  position: absolute;
+} */
+
+/* label,
+.newsletter {
+  top: 25px;
+  left: 90px;
+} */
+
+.terms-bloc {
+  width: 250px;
+  font-size: 12px;
+  color: #99999999;
+  margin-top: 50px;
+}

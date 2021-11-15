@@ -1,6 +1,9 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
-import "./SignUp.css";
+import { useState } from "react";
+import "../assets/css/SignUp.css";
+// import "../assets/css/fonts.css";
+import Modal from "react-modal";
+
 import { useNavigate } from "react-router-dom";
 
 const SignUp = ({ setUser }) => {
@@ -8,6 +11,7 @@ const SignUp = ({ setUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const navigate = useNavigate();
 
@@ -41,10 +45,6 @@ const SignUp = ({ setUser }) => {
           password: password,
         }
       );
-      // console.log(response.data);
-      // setData(response.data);
-      // const token = response.data.token;
-      // Cookies.set("token", token);
       if (response.data.token) {
         setUser(response.data.token);
         navigate("/");
@@ -60,51 +60,70 @@ const SignUp = ({ setUser }) => {
 
   return (
     <main>
-      <div className="container">
-        <div className="form">
-          <h1>S'inscrire</h1>
-          <form onSubmit={handleSubmit}>
-            <div>
-              <input
-                onChange={handleName}
-                placeholder="Nom d'utilisateur"
-                type="text"
-                value={username}
-              />
-            </div>
-            <div>
-              <input
-                onChange={handleEmail}
-                placeholder="Email"
-                type="email"
-                value={email}
-              />
-            </div>
-            <div>
-              <input
-                onChange={handlePassword}
-                placeholder="Password"
-                type="password"
-                value={password}
-              />
-            </div>
+      <button onClick={() => setModalIsOpen(true)} className="header-items">
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={() => setModalIsOpen(false)}
+          style={{
+            overlay: {
+              backgroundColor: "#F2F2F2",
+            },
+          }}
+        >
+          <div>
+            <button onClick={() => setModalIsOpen(false)}>close</button>
+          </div>
+          <div className="container">
+            <div className="form">
+              <h2>S'inscrire</h2>
+              <form onSubmit={handleSubmit}>
+                <div>
+                  <input
+                    onChange={handleName}
+                    placeholder="Nom d'utilisateur"
+                    type="text"
+                    value={username}
+                  />
+                </div>
+                <div>
+                  <input
+                    onChange={handleEmail}
+                    placeholder="Email"
+                    type="email"
+                    value={email}
+                  />
+                </div>
+                <div>
+                  <input
+                    onChange={handlePassword}
+                    placeholder="Mot de passe"
+                    type="password"
+                    value={password}
+                  />
+                </div>
+                <div className="terms-container">
+                  <label>
+                    <input type="checkbox" className="checkbox" />
+                    <span className="newsletter">
+                      S'inscrire à notre newsletter
+                    </span>
+                  </label>
 
-            <span>
-              <input type="checkbox" />
-              S'inscrire à notre newsletter
-            </span>
-            <div>
-              <p>
-                En m'inscrivant, je confirme que j'ai accepté les Termes et
-                Conditions de Vinted, avoir lu la Politique de Confidentialité,
-                et que j'ai plus de 18 ans.
-              </p>
-              <input type="submit" value="S'inscrire" />
-              <p>Tu as déjà un compte ? Connecte-toi !</p>
+                  <div className="terms-bloc">
+                    En m'inscrivant, je confirme que j'ai accepté les Termes et
+                    Conditions de Vinted, avoir lu la Politique de
+                    Confidentialité, et que j'ai plus de 18 ans.
+                  </div>
+
+                  <input type="submit" value="S'inscrire" class="blue-btn" />
+                  <p>Tu as déjà un compte ? Connecte-toi !</p>
+                </div>
+              </form>
             </div>
-          </form>
-        </div>
-      </div>
+          </div>
+        </Modal>
+        S'inscrire
+      </button>
     </main>
   );
 };

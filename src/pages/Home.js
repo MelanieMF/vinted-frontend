@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import backgroundimg from "../assets/img/background-vinted.jpg";
+import background2 from "../assets/img/background2.svg";
 
 const Home = () => {
   const [data, setData] = useState();
@@ -28,6 +29,8 @@ const Home = () => {
   ) : (
     <div>
       <img src={backgroundimg} alt="" className="background" />
+      <img src={background2} alt="" className="background2" />
+
       <div className="accroche-container">
         <h1>Prêts à faire du tri dans vos placards ?</h1>
         <button className="accroche-container-btn button">
