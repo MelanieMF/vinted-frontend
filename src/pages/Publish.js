@@ -1,18 +1,22 @@
 // import "../assets/css/App.css";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-const Publish = (token) => {
+const Publish = ({ token }) => {
+  // console.log(token);
   const [file, setFile] = useState();
-  const [title, setTitle] = useState("");
-  const [data, setData] = useState("");
-  const [description, setDescription] = useState("");
-  const [brand, setBrand] = useState("");
+  const [title, setTitle] = useState("q");
+  const [data, setData] = useState("Q");
+  const [description, setDescription] = useState("q");
+  const [brand, setBrand] = useState("q");
   const [size, setSize] = useState();
-  const [color, setColor] = useState("");
-  const [condition, setCondition] = useState("");
-  const [city, setCity] = useState("");
+  const [color, setColor] = useState("q");
+  const [condition, setCondition] = useState("q");
+  const [city, setCity] = useState("q");
   const [price, setPrice] = useState();
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     try {
@@ -27,8 +31,7 @@ const Publish = (token) => {
       formData.append("color", color);
       formData.append("condition", condition);
       formData.append("city", city);
-      formData.append("price", price);
-
+      formData.append("price", Number(price));
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
         formData,
@@ -39,8 +42,10 @@ const Publish = (token) => {
           },
         }
       );
-      console.log(data);
+      // console.log(response.data);
       setData(response.data);
+      console.log(response.data);
+      navigate(`/offer/${response.data._id}`);
     } catch (error) {
       console.log(error.message);
     }
@@ -48,7 +53,7 @@ const Publish = (token) => {
 
   return (
     <div>
-      <form onSubmit={(event) => handleSubmit()}>
+      <form onSubmit={(event) => handleSubmit(event)}>
         <div>
           <input
             // multiple={true}

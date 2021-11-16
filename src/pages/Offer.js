@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import "../assets/css/App.css";
+import { Link } from "react-router-dom";
 
 const Offer = () => {
   const [data, setData] = useState();
@@ -53,7 +54,19 @@ const Offer = () => {
           <p>{data.product_name}</p>
           <p>{data.product_description}</p>
           <p>{data.owner.account.username}</p>
-          <button className="offer-container-btn button">Acheter</button>
+          <button className="offer-container-btn button">
+            <Link
+              to="/payment"
+              className="button"
+              state={{
+                title: data.product_name,
+                price: data.product_price,
+                user: data.owner.account._id,
+              }}
+            >
+              Acheter
+            </Link>
+          </button>
         </div>
       </div>
     </section>
