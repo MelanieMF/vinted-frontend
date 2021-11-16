@@ -16,6 +16,7 @@ button {
 .blue-btn {
   background-color: #2ab1ba;
   color: #fff;
+  border-radius: 5px;
 }
 
 .offer-container-btn {
@@ -28,6 +29,14 @@ button {
   color: #fff;
 }
 
-.button {
-  padding: 10px;
+.big-button {
+  height: 45px;
+  width: 187px;
+  background-color: #2baeb7;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  padding: 0 14px;
+  margin-top: 32px;
 }

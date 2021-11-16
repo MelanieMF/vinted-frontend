@@ -17,7 +17,7 @@ body {
 
 .background2 {
   position: absolute;
-  top: 27.5rem;
+  top: 520px;
   left: 0;
 }
 
@@ -29,11 +29,9 @@ body {
   padding: 20px;
   top: 160px;
   left: 310px;
-  /* padding: 10px 0; */
 }
 
 .accroche-container h1 {
-  /* font-family: Arial; */
   font-weight: lighter;
   font-size: 34px;
 }
@@ -47,7 +45,6 @@ body {
 
 .products-line-container {
   display: flex;
-  /* border: 1px solid red; */
   margin: 10px;
 }
 
@@ -66,38 +63,5 @@ body {
 .products-line-container p {
   font-size: 10px;
   margin: 0;
-  color: #c6c6c6;
-}
-
-/* Page Offre */
-
-.offer-container {
-  background-color: #ebedee;
-  height: 100vh;
-  /* width: 100%; */
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.offer-product-container {
-  background-color: #fff;
-  height: 600px;
-  width: 400px;
-  display: flex;
-  justify-content: space-around;
-}
-
-.offer-product-container h3 {
-  font-size: 30px;
-}
-
-.offer-product-description {
-  display: flex;
-  text-transform: uppercase;
-}
-
-.offer-product-description-left {
-  margin-right: 20px;
   color: #c6c6c6;
 }

@@ -8,7 +8,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid blue;
+  width: 1280px;
+  margin: auto;
+  padding: 10px 0;
 }
 
 input {
@@ -19,7 +21,6 @@ input {
 header nav {
   display: flex;
   align-items: center;
-  /* border: 1px solid red; */
 }
 
 .header-items {

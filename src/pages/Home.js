@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import backgroundimg from "../assets/img/background-vinted.jpg";
 import background2 from "../assets/img/background2.svg";
 import "../assets/css/Buttons.css";
+import "../assets/css/Home.css";
 
 const Home = () => {
   const [data, setData] = useState();
@@ -33,11 +34,9 @@ const Home = () => {
 
       <div className="accroche-container">
         <h1>Prêts à faire du tri dans vos placards ?</h1>
-        <button>
-          <Link to="/signup" className="blue-btn button">
-            Commencer à vendre
-          </Link>
-        </button>
+        <Link to="/signup">
+          <button className="blue-btn big-button">Commencer à vendre</button>
+        </Link>
       </div>
       <div className="container">
         <div className="products-container">

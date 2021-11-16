@@ -10,10 +10,6 @@ main {
   align-items: center;
 }
 
-form {
-  border: 1px solid salmon;
-}
-
 .signup-form input {
   border: none;
   border-bottom: 1px solid #e0e0e0;
@@ -30,34 +26,24 @@ form {
 }
 
 .terms-container {
-  border: 3px solid sienna;
   display: flex;
-  flex-direction: column;
+  font-size: 16px;
+  justify-content: space-evenly;
   align-items: center;
-  text-align: left;
-  position: relative;
-}
-/* 
-label {
-  border: 3px solid seagreen;
-  display: flex;
-  align-items: center;
-  position: relative;
+  transform: scale(1.1);
+  padding: 0 15px;
 }
 
-.newsletter {
-  position: absolute;
-} */
-
-/* label,
-.newsletter {
-  top: 25px;
-  left: 90px;
-} */
-
-.terms-bloc {
+.terms-container p {
   width: 250px;
   font-size: 12px;
   color: #99999999;
   margin-top: 50px;
+  text-align: center;
+}
+
+.already-account {
+  font-size: 12px;
+  color: #2ab1ba;
+  text-decoration: underline;
 }

@@ -1,0 +1,31 @@
+/* Page Offre */
+
+.offer-container {
+  background-color: #ebedee;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.offer-product-container {
+  background-color: #fff;
+  height: 600px;
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.offer-product-container h3 {
+  font-size: 30px;
+}
+
+.offer-product-description {
+  display: flex;
+  text-transform: uppercase;
+}
+
+.offer-product-description-left {
+  margin-right: 20px;
+  color: #c6c6c6;
+}

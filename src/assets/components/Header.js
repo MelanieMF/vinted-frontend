@@ -55,9 +55,9 @@ const Header = ({ token, setUser }) => {
               <Link to="/signup">
                 <button className="header-items">S'inscrire</button>
               </Link>
-              <button className="header-items">
-                <Link to="/login">Se connecter</Link>
-              </button>
+              <Link to="/login">
+                <button className="header-items">Se connecter</button>
+              </Link>
             </div>
           )}
         </nav>
