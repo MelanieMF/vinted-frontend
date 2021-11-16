@@ -36,7 +36,7 @@ const Login = ({ setUser }) => {
       );
       if (response.data.token) {
         setUser(response.data.token);
-        // navigate("/");
+        navigate("/");
         setModalLog(false);
       }
       // console.log(response.data);

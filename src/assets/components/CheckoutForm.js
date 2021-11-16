@@ -7,6 +7,9 @@ const CheckoutForm = () => {
   const stripe = useStripe();
   const elements = useElements();
   const location = useLocation();
+  const shippingFees = 0.8;
+  const userTaxes = 0.4;
+  const total = shippingFees + userTaxes;
   const { title, price, user } = location.state;
 
   const [completed, setCompleted] = useState(false);
@@ -24,7 +27,7 @@ const CheckoutForm = () => {
       {
         token: stripeToken,
         title: "titre de l'annonce",
-        amount: 10,
+        amount: total + price,
       }
     );
     console.log(response.data);
@@ -38,11 +41,12 @@ const CheckoutForm = () => {
         <form onSubmit={handleSubmit}>
           <CardElement />
           <ul>
-            {/* <li>{title}</li> */}
+            <li>{title}</li>
             <li>{price} </li>
             <li>{user} </li>
-            <li> </li>
-            <li></li>
+            <li>{shippingFees} </li>
+            <li>{userTaxes} </li>
+            <li>{total + price} </li>
           </ul>
           <button type="submit">Valider</button>
         </form>

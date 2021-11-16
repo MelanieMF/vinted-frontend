@@ -52,22 +52,11 @@ const Header = ({ token, setUser }) => {
             </div>
           ) : (
             <div>
-              <button
-                onClick={() => {
-                  setModalSign(true);
-                }}
-                className="header-items"
-              >
-                S'inscrire
-              </button>
-
-              <button
-                onClick={() => {
-                  setModalLog(true);
-                }}
-                className="header-items"
-              >
-                Se connecter
+              <Link to="/signup">
+                <button className="header-items">S'inscrire</button>
+              </Link>
+              <button className="header-items">
+                <Link to="/login">Se connecter</Link>
               </button>
             </div>
           )}

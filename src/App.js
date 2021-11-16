@@ -3,12 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Home from "./pages/Home";
 import Offer from "./pages/Offer";
-// import SignUp from "./assets/components/SignUp";
-// import Login from "./assets/components/Login";
+import SignUp from "./assets/components/SignUp";
+import Login from "./assets/components/Login";
 import Publish from "./pages/Publish";
 import Header from "./assets/components/Header";
 import Cookies from "js-cookie";
-import Payment from "./assets/components/CheckoutForm";
 import CheckoutForm from "./assets/components/CheckoutForm";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
@@ -34,8 +33,8 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/publish" element={<Publish token={token} />} />
         <Route path="/offer/:id" element={<Offer />} />
-        {/* <Route path="/signup" element={<SignUp setUser={setUser} />} />
-        <Route path="/login" element={<Login setUser={setUser} />} /> */}
+        <Route path="/signup" element={<SignUp setUser={setUser} />} />
+        <Route path="/login" element={<Login setUser={setUser} />} />
         <Route
           path="/payment"
           element={

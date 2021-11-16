@@ -45,7 +45,7 @@ const SignUp = ({ setUser }) => {
       );
       if (response.data.token) {
         setUser(response.data.token);
-        // navigate("/");
+        navigate("/");
         setModalSign(false);
       }
     } catch (error) {

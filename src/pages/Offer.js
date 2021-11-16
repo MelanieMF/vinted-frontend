@@ -61,7 +61,7 @@ const Offer = () => {
               state={{
                 title: data.product_name,
                 price: data.product_price,
-                user: data.owner.account._id,
+                user: data.owner.account.username,
               }}
             >
               Acheter
