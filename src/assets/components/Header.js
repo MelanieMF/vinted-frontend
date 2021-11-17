@@ -8,18 +8,7 @@ import "../css/Buttons.css";
 import { useNavigate } from "react-router-dom";
 
 const Header = ({ token, setUser }) => {
-  const [modalSign, setModalSign] = useState(false);
-  const [modalLog, setModalLog] = useState(false);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    if (modalLog || modalSign) {
-      document.body.style.overflow = "hidden";
-    }
-    if (!modalLog && !modalSign) {
-      document.body.style.overflow = "unset";
-    }
-  }, [modalLog, modalSign]);
 
   return (
     <div className="container">
