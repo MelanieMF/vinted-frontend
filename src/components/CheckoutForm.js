@@ -2,6 +2,8 @@ import axios from "axios";
 import { useState } from "react";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import { useLocation } from "react-router";
+import "../assets/css/CheckoutForm.css";
+import "../assets/css/Buttons.css";
 
 const CheckoutForm = () => {
   const stripe = useStripe();
@@ -48,7 +50,9 @@ const CheckoutForm = () => {
             <li>{userTaxes} </li>
             <li>{total + price} </li>
           </ul>
-          <button type="submit">Valider</button>
+          <button type="submit" className="blue-btn">
+            Valider
+          </button>
         </form>
       ) : (
         <span>Paiement effectué ! </span>
