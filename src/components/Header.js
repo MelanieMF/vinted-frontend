@@ -1,10 +1,7 @@
 import { Link } from "react-router-dom";
-import logo from "../img/logo-vinted.png";
-import Login from "./Login";
-import SignUp from "./SignUp";
-import { useState, useEffect } from "react";
-import "../css/Header.css";
-import "../css/Buttons.css";
+import logo from "../assets/img/logo-vinted.png";
+import "../assets/css/Header.css";
+import "../assets/css/Buttons.css";
 import { useNavigate } from "react-router-dom";
 
 const Header = ({ token, setUser }) => {

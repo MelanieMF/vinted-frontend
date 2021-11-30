@@ -1,10 +1,170 @@
+/* Main rules */
+
 body {
   color: #000;
   text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-h3 {
+.container {
+  width: 1240px;
+  margin: 0 auto;
+}
+
+.home-bg-container {
+  background-image: url("../img/background-vinted.jpg");
+  height: 500px;
+  width: 100%;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+}
+
+.backgroundeffect {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.home-bgimg-container {
+  height: 260;
+  width: 400px;
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 30px;
+  position: absolute;
+  top: 90px;
+  left: 90px;
+}
+
+.home-bgimg-container h1 {
+  font-weight: lighter;
+  font-size: 34px;
+}
+
+.user {
   color: #999;
-  font-size: 12px;
+  font-size: 16px;
   text-decoration: none;
+  padding: 10px 0;
+}
+
+/*  SIGNUP  */
+
+main {
+  width: 1240px;
+  margin: auto;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-form input {
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  margin: 20px;
+}
+
+::placeholder {
+  color: #cecece;
+  font-size: 16px;
+}
+
+.checkbox {
+  height: 25px;
+}
+
+.terms-container {
+  display: flex;
+  font-size: 16px;
+  justify-content: space-evenly;
+  align-items: center;
+  transform: scale(1.1);
+  padding: 0 15px;
+}
+
+.terms-container p {
+  width: 250px;
+  font-size: 12px;
+  color: #99999999;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.already-account {
+  font-size: 12px;
+  color: #2ab1ba;
+  text-decoration: underline;
+}
+
+/*  LOGIN  */
+
+main {
+  width: 1240px;
+  margin: auto;
+  text-align: center;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  margin: 20px;
+}
+
+.forgot-password {
+  font-size: 12px;
+  color: #2ab1ba;
+  text-decoration: underline;
+}
+
+/* Conteneur des articles vinted */
+
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.products-cards-container {
+  display: flex;
+  margin: 10px;
+}
+
+.products-cards-container img {
+  height: 350px;
+  width: 220px;
+  object-fit: cover;
+}
+
+.products-cards-container h2 {
+  font-size: 14px;
+  font-weight: lighter;
+  margin: 0;
+}
+
+.products-cards-container p {
+  font-size: 10px;
+  margin: 0;
+  color: #c6c6c6;
+}
+
+.products-avatar-owner {
+  display: flex;
+  align-items: center;
+}
+
+.products-avatar-owner img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+/* PUBLISH PAGE */
+
+.publish-container {
+  background-color: #ebedee;
 }

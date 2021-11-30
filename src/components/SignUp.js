@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState } from "react";
-import "../css/SignUp.css";
 
 import { useNavigate } from "react-router-dom";
 
@@ -9,7 +8,6 @@ const SignUp = ({ setUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [modalSign, setModalSign] = useState(false);
 
   const navigate = useNavigate();
 
@@ -36,7 +34,7 @@ const SignUp = ({ setUser }) => {
   const fetchData = async () => {
     try {
       const response = await axios.post(
-        "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+        "https://vinted-backend-melanie.herokuapp.com/user/signup",
         {
           username: username,
           email: email,
@@ -46,7 +44,6 @@ const SignUp = ({ setUser }) => {
       if (response.data.token) {
         setUser(response.data.token);
         navigate("/");
-        setModalSign(false);
       }
     } catch (error) {
       console.log(error.response);

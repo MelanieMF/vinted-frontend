@@ -8,9 +8,8 @@ button {
   font-size: 12px;
 }
 
-.link {
-  color: #2ab1ba;
-  text-decoration: none;
+button:hover {
+  cursor: pointer;
 }
 
 .blue-btn {
@@ -31,7 +30,7 @@ button {
 
 .big-button {
   height: 45px;
-  width: 187px;
+  width: 185px;
   background-color: #2baeb7;
   border-radius: 4px;
   color: #fff;
@@ -39,4 +38,13 @@ button {
   border: none;
   padding: 0 14px;
   margin-top: 32px;
+}
+
+.big-button:hover {
+  cursor: pointer;
+}
+
+.logout {
+  background-color: #c2175b;
+  color: #fff;
 }

@@ -1,19 +1,20 @@
-// import "../assets/css/App.css";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+import "../assets/css/Home.css";
+
 const Publish = ({ token }) => {
   // console.log(token);
   const [file, setFile] = useState();
-  const [title, setTitle] = useState("q");
-  const [data, setData] = useState("Q");
-  const [description, setDescription] = useState("q");
-  const [brand, setBrand] = useState("q");
+  const [title, setTitle] = useState("");
+  // const [data, setData] = useState("");
+  const [description, setDescription] = useState("");
+  const [brand, setBrand] = useState("");
   const [size, setSize] = useState();
-  const [color, setColor] = useState("q");
-  const [condition, setCondition] = useState("q");
-  const [city, setCity] = useState("q");
+  const [color, setColor] = useState("");
+  const [condition, setCondition] = useState("");
+  const [city, setCity] = useState("");
   const [price, setPrice] = useState();
 
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ const Publish = ({ token }) => {
       formData.append("city", city);
       formData.append("price", Number(price));
       const response = await axios.post(
-        "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
+        "https://vinted-backend-melanie.herokuapp.com/offer/publish",
         formData,
         {
           headers: {
@@ -43,16 +44,20 @@ const Publish = ({ token }) => {
         }
       );
       // console.log(response.data);
-      setData(response.data);
-      console.log(response.data);
-      navigate(`/offer/${response.data._id}`);
+      if (response.data._id) {
+        // redirectoin vers l'offre
+        navigate(`/offer/${response.data._id}`);
+        // console.log(response.data);
+      } else {
+        alert("Une erreur est survenue, veuillez réssayer");
+      }
     } catch (error) {
       console.log(error.message);
     }
   };
 
   return (
-    <div>
+    <div className="publish-container">
       <form onSubmit={(event) => handleSubmit(event)}>
         <div>
           <input
@@ -68,7 +73,7 @@ const Publish = ({ token }) => {
               <input
                 onChange={(event) => setTitle(event.target.value)}
                 type="text"
-                placeholder="ex: Chemise Sézane verte"
+                placeholder="ex: Chemise blanche"
               />
             </label>
           </div>
@@ -78,7 +83,7 @@ const Publish = ({ token }) => {
               <input
                 onChange={(event) => setDescription(event.target.value)}
                 type="text"
-                placeholder="ex: Chemise Sézane verte"
+                placeholder="ex: porté quelques fois, taille correctement"
               />
             </label>
           </div>
@@ -91,7 +96,7 @@ const Publish = ({ token }) => {
               <input
                 onChange={(event) => setBrand(event.target.value)}
                 type="text"
-                placeholder="ex: Chemise Sézane verte"
+                placeholder="ex: Zara"
               />
             </label>
           </div>
@@ -101,7 +106,7 @@ const Publish = ({ token }) => {
               <input
                 onChange={(event) => setSize(event.target.value)}
                 type="text"
-                placeholder="ex: Chemise Sézane verte"
+                placeholder="ex: L / 40 / 12"
               />
             </label>
           </div>
@@ -111,7 +116,7 @@ const Publish = ({ token }) => {
               <input
                 onChange={(event) => setColor(event.target.value)}
                 type="text"
-                placeholder="ex: Chemise Sézane verte"
+                placeholder="ex: Blanche"
               />
             </label>
           </div>
@@ -121,7 +126,7 @@ const Publish = ({ token }) => {
               <input
                 onChange={(event) => setCondition(event.target.value)}
                 type="text"
-                placeholder="ex: Chemise Sézane verte"
+                placeholder="ex: Neuf avec étiquette"
               />
             </label>
           </div>
@@ -131,7 +136,7 @@ const Publish = ({ token }) => {
               <input
                 onChange={(event) => setCity(event.target.value)}
                 type="text"
-                placeholder="ex: Chemise Sézane verte"
+                placeholder="ex: Paris"
               />
             </label>
           </div>
@@ -143,7 +148,7 @@ const Publish = ({ token }) => {
             <input
               onChange={(event) => setPrice(event.target.value)}
               type="text"
-              placeholder="ex: Chemise Sézane verte"
+              placeholder="ex: 0,00 €"
             />
           </label>
         </div>

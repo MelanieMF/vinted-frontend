@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import "../assets/css/App.css";
 import "../assets/css/Buttons.css";
 import "../assets/css/Offer.css";
 import { Link } from "react-router-dom";
@@ -15,9 +14,9 @@ const Offer = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`
+          `https://vinted-backend-melanie.herokuapp.com/offer/${id}`
         );
-        // console.log(response.data);
+        console.log(response.data);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {

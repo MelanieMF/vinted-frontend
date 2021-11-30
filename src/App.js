@@ -1,14 +1,14 @@
-import "../src/assets/css/App.css";
+import "./assets/css/Home.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Home from "./pages/Home";
 import Offer from "./pages/Offer";
-import SignUp from "./assets/components/SignUp";
-import Login from "./assets/components/Login";
+import SignUp from "./components/SignUp";
+import Login from "./components/Login";
 import Publish from "./pages/Publish";
-import Header from "./assets/components/Header";
+import Header from "./components/Header";
 import Cookies from "js-cookie";
-import CheckoutForm from "./assets/components/CheckoutForm";
+import CheckoutForm from "./components/CheckoutForm";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 
