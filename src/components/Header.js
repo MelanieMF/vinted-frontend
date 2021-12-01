@@ -3,6 +3,7 @@ import logo from "../assets/img/logo-vinted.png";
 import "../assets/css/Header.css";
 import "../assets/css/Buttons.css";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Header = ({ token, setUser }) => {
   const navigate = useNavigate();
@@ -10,10 +11,22 @@ const Header = ({ token, setUser }) => {
   return (
     <div className="container">
       <header>
-        <Link to="/">
+        <div
+          onClick={() => {
+            navigate("/");
+          }}
+        >
           <img src={logo} alt="logo" className="logo" />
-        </Link>
-        <input type="search" placeholder="Rechercher des articles" />
+        </div>
+        <div className="search-container">
+          <input
+            type="search"
+            placeholder="Rechercher des articles"
+            className="search-input"
+          />
+          <FontAwesomeIcon icon="search" className="search-input-icon" />
+        </div>
+
         <nav>
           {token ? (
             <div>

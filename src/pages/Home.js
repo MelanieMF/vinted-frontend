@@ -10,12 +10,13 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
   const navigate = useNavigate();
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://vinted-backend-melanie.herokuapp.com/offers/?&page=${page}`
+          `https://vinted-backend-melanie.herokuapp.com/offers/?&page=${page}&title=${search}`
         );
         console.log(response.data);
         setData(response.data);
@@ -25,7 +26,7 @@ const Home = () => {
       }
     };
     fetchData();
-  }, [page]);
+  }, [page, search]);
 
   console.log(page);
 
@@ -85,30 +86,30 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section>
-        <div className="changePage">
+      <section className="pagination">
+        <div className="changepage">
           {page > 0 ? (
             <button
-              className="page-button"
+              className="blue-btn"
               onClick={() => {
                 setPage(page - 1);
               }}
             >
-              page précédente
+              Précédent
             </button>
           ) : (
             <div></div>
           )}
-          <div className="counter">{page}</div>
+          <div className="counter-page">{page}</div>
 
           {page <= 15 ? (
             <button
-              className="page-button"
+              className="blue-btn"
               onClick={() => {
                 setPage(page + 1);
               }}
             >
-              page suivante
+              Suivant
             </button>
           ) : (
             <div></div>

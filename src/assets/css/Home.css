@@ -42,6 +42,36 @@ body {
   font-size: 34px;
 }
 
+/* SEARCHBAR */
+
+.search-container {
+  position: relative;
+}
+
+.search-input {
+  width: 600px;
+  padding-left: 40px;
+  background-color: #f5f6f7;
+  border-radius: 5px;
+  height: 37px;
+  border: none;
+  outline: none;
+  font-family: "Maison Neue";
+  font-size: 16px;
+}
+
+.search-input::placeholder {
+  color: #cbcccd;
+  font-size: 16px;
+}
+
+.search-input-icon {
+  position: absolute;
+  left: 28px;
+  top: 30px;
+  color: #bbbbbb;
+}
+
 .user {
   color: #999;
   font-size: 16px;
@@ -175,12 +205,21 @@ input {
   margin: auto;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-around; */
-  /* align-items: space-around; */
   align-content: space-between;
 }
 
-.field {
+.pagination {
+  margin: 20px 0;
+}
+
+.changepage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.counter-page {
+  margin: 0 10px;
 }
 
 /* ADD PICTURE BUTTON */

@@ -11,7 +11,9 @@ import Cookies from "js-cookie";
 import CheckoutForm from "./components/CheckoutForm";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
-
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+library.add(faSearch);
 const stripePromise = loadStripe("pk_test_5z9rSB8XwuAOihoBixCMfL6X");
 
 const App = () => {
