@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Dropzone from "../components/Dropzone";
 
 import "../assets/css/Home.css";
 
@@ -16,6 +17,7 @@ const Publish = ({ token }) => {
   const [condition, setCondition] = useState("");
   const [city, setCity] = useState("");
   const [price, setPrice] = useState();
+  const [, setPreview] = useState();
 
   const navigate = useNavigate();
 
@@ -45,7 +47,6 @@ const Publish = ({ token }) => {
       );
       // console.log(response.data);
       if (response.data._id) {
-        // redirectoin vers l'offre
         navigate(`/offer/${response.data._id}`);
         // console.log(response.data);
       } else {
@@ -57,17 +58,24 @@ const Publish = ({ token }) => {
   };
 
   return (
-    <div className="publish-container">
+    <section className="publish-container">
+      <h2>Vends ton article</h2>
       <form onSubmit={(event) => handleSubmit(event)}>
-        <div>
-          <input
-            // multiple={true}
-            onChange={(event) => setFile(event.target.files[0])}
-            type="file"
-          />
+        <div className="element-container">
+          <div className="add-picture-button">
+            <input
+              type="file"
+              multiple={true}
+              onChange={(event) => {
+                setFile(event.target.files[0]);
+              }}
+            />
+            <Dropzone setFile={setFile} file={file} />
+          </div>
         </div>
-        <div>
-          <div>
+
+        <div className="element-container">
+          <div className="field">
             <label>
               Titre
               <input
@@ -77,7 +85,7 @@ const Publish = ({ token }) => {
               />
             </label>
           </div>
-          <div>
+          <div className="field">
             <label>
               Décris ton article
               <input
@@ -89,8 +97,8 @@ const Publish = ({ token }) => {
           </div>
         </div>
 
-        <div>
-          <div>
+        <div className="element-container">
+          <div className="field">
             <label>
               Marque
               <input
@@ -100,7 +108,7 @@ const Publish = ({ token }) => {
               />
             </label>
           </div>
-          <div>
+          <div className="field">
             <label>
               Taille
               <input
@@ -110,7 +118,7 @@ const Publish = ({ token }) => {
               />
             </label>
           </div>
-          <div>
+          <div className="field">
             <label>
               Couleur
               <input
@@ -120,7 +128,7 @@ const Publish = ({ token }) => {
               />
             </label>
           </div>
-          <div>
+          <div className="field">
             <label>
               Etat
               <input
@@ -130,7 +138,7 @@ const Publish = ({ token }) => {
               />
             </label>
           </div>
-          <div>
+          <div className="field">
             <label>
               Lieu
               <input
@@ -142,21 +150,26 @@ const Publish = ({ token }) => {
           </div>
         </div>
 
-        <div>
-          <label>
-            Prix
-            <input
-              onChange={(event) => setPrice(event.target.value)}
-              type="text"
-              placeholder="ex: 0,00 €"
-            />
-          </label>
+        <div className="element-container">
+          <div className="field">
+            <label>
+              Prix
+              <input
+                onChange={(event) => setPrice(event.target.value)}
+                type="text"
+                placeholder="ex: 0,00 €"
+              />
+            </label>
+          </div>
         </div>
-
+        <div className="element-container">
+          <input type="checkbox" />
+          <span>Je suis intéressé(e) par les échanges</span>
+        </div>
         <input type="submit" value="ajouter" className="blue-btn" />
       </form>
       {/* {data && <img src={data.secure_url} alt="" />} */}
-    </div>
+    </section>
   );
 };
 

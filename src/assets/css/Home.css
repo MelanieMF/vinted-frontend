@@ -168,3 +168,19 @@ input {
 .publish-container {
   background-color: #ebedee;
 }
+
+.element-container {
+  background-color: #fff;
+  width: 1240px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  /* align-items: space-around; */
+  align-content: space-between;
+}
+
+.field {
+}
+
+/* ADD PICTURE BUTTON */
