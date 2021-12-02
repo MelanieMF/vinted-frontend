@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import "../assets/css/Buttons.css";
-import "../assets/css/Offer.css";
+import "../../assets/css/Buttons.css";
+import "../Offer/Offer.css";
 import { Link } from "react-router-dom";
 
 const Offer = () => {

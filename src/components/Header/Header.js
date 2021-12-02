@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/img/logo-vinted.png";
-import "../assets/css/Header.css";
-import "../assets/css/Buttons.css";
+import logo from "../../assets/img/logo-vinted.png";
+import "../Header/Header.css";
+import "../../assets/css/Buttons.css";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Header = ({ token, setUser }) => {
+const Header = ({ token, setUser, setSearch }) => {
   const navigate = useNavigate();
 
   return (
@@ -23,6 +23,9 @@ const Header = ({ token, setUser }) => {
             type="search"
             placeholder="Rechercher des articles"
             className="search-input"
+            onChange={(event) => {
+              setSearch(event.target.value);
+            }}
           />
           <FontAwesomeIcon icon="search" className="search-input-icon" />
         </div>

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import Dropzone from "../components/Dropzone";
+import Dropzone from "../../components/Dropzone";
 
-import "../assets/css/Home.css";
+import "../Publish/Publish.css";
 
 const Publish = ({ token }) => {
   // console.log(token);

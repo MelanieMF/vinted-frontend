@@ -1,16 +1,16 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import backgroundeffect from "../assets/img/background2.svg";
-import "../assets/css/Buttons.css";
-import "../assets/css/Home.css";
+import backgroundeffect from "../../assets/img/background2.svg";
+import "../../assets/css/Buttons.css";
+import "../Home/Home.css";
 
 const Home = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
-  const navigate = useNavigate();
   const [search, setSearch] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -50,6 +50,9 @@ const Home = () => {
           </div>
         </div>
         <div>
+          <div className="results-offers">
+            <h3>{data.count} offres trouvées </h3>
+          </div>
           <div className="container">
             <div className="products-container">
               {data.offers &&
@@ -69,6 +72,7 @@ const Home = () => {
                         <img src={elem.product_image.secure_url} alt="" />
                         <div>
                           <h2>{elem.product_price} €</h2>
+                          <p>{elem.product_name}</p>
                           {elem.product_details.map((item, index) => {
                             return (
                               <div key={index}>

@@ -2,8 +2,8 @@ import axios from "axios";
 import { useState } from "react";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import { useLocation } from "react-router";
-import "../assets/css/CheckoutForm.css";
-import "../assets/css/Buttons.css";
+import "../CheckoutForm/CheckoutForm.css";
+import "../../assets/css/Buttons.css";
 
 const CheckoutForm = () => {
   const stripe = useStripe();
