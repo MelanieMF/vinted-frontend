@@ -3,16 +3,8 @@ import "../Header/Header.css";
 import "../../assets/css/Buttons.css";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import PriceRange from "../../components/PriceRange";
 
-const Header = ({
-  token,
-  setUser,
-  setSearch,
-  setFetchRangeValues,
-  sortPrice,
-  setSortPrice,
-}) => {
+const Header = ({ token, setUser, setSearch }) => {
   const navigate = useNavigate();
 
   return (
@@ -82,33 +74,6 @@ const Header = ({
           )}
         </nav>
       </header>
-      <div>
-        <div
-          style={{
-            marginTop: 25,
-            fontSize: "12px",
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          {/* <span style={{ marginRight: 10 }}>Trier par prix : </span>
-          <span className="checkbox">
-            <input type="checkbox" checked={sortPrice} name="price" />
-            <div
-              className="wrapper"
-              onClick={() => {
-                setSortPrice(!sortPrice);
-              }}
-            >
-              <div className="knob">
-                <span>{sortPrice ? "⇣" : "⇡"}</span>
-              </div>
-            </div>
-          </span>
-          <span style={{ marginRight: 10 }}>Prix entre : </span>
-          <PriceRange setFetchRangeValues={setFetchRangeValues} /> */}
-        </div>
-      </div>
     </div>
   );
 };
