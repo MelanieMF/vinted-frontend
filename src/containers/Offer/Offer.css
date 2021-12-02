@@ -8,7 +8,18 @@
   align-items: center;
 }
 
-.offer-product-container {
+.offer-picture-container {
+  display: flex;
+  justify-content: center;
+}
+
+.offer-picture {
+  height: 600px;
+  max-width: 600px;
+  object-fit: cover;
+}
+
+.offer-product {
   background-color: #fff;
   height: 600px;
   width: 400px;
@@ -16,7 +27,7 @@
   justify-content: space-around;
 }
 
-.offer-product-container h3 {
+.offer-product h3 {
   font-size: 30px;
 }
 

@@ -30,10 +30,14 @@ const Offer = () => {
     <p>En cours de chargement...</p>
   ) : (
     <section className="offer-container">
-      <div>
-        <img src={data.product_image.secure_url} alt="article" />
+      <div className="offer-picture-container">
+        <img
+          src={data.product_image.secure_url}
+          alt="article"
+          className="offer-picture"
+        />
       </div>
-      <div className="offer-product-container">
+      <div className="offer-product">
         <div>
           <h3>{data.product_price} €</h3>
           <section className="offer-product-description">

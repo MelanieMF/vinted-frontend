@@ -1,12 +1,16 @@
-import "./containers/Home/Home.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+// Import internes
 import Home from "./containers/Home/Home";
 import Offer from "./containers/Offer/Offer";
-import SignUp from "./components/SignUp";
-import Login from "./components/Login";
+import SignUp from "./components/UserAccount/SignUp";
+import Login from "./components/UserAccount/Login";
 import Publish from "./containers/Publish/Publish";
 import Header from "./components/Header/Header";
+import "./containers/Home/Home.css";
+
+// Import externes
+import axios from "axios";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import CheckoutForm from "./components/CheckoutForm/CheckoutForm";
 import { loadStripe } from "@stripe/stripe-js";
@@ -18,6 +22,9 @@ const stripePromise = loadStripe("pk_test_5z9rSB8XwuAOihoBixCMfL6X");
 
 const App = () => {
   const [token, setToken] = useState(Cookies.get("userToken") || null);
+  const [, setData] = useState([]);
+  const [, setIsLoading] = useState(false);
+  const [search, setSearch] = useState("");
 
   const setUser = (token) => {
     if (token) {
@@ -28,9 +35,20 @@ const App = () => {
     setToken(token);
   };
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get(
+        `https://vinted-backend-melanie.herokuapp.com/offers?title=${search}`
+      );
+      setData(response.data);
+      setIsLoading(false);
+    };
+    fetchData();
+  }, [search]);
+
   return (
     <Router>
-      <Header token={token} setUser={setUser} />
+      <Header token={token} setUser={setUser} setSearch={setSearch} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/publish" element={<Publish token={token} />} />

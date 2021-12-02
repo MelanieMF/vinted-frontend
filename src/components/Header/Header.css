@@ -27,3 +27,7 @@ header nav {
   border: 1px solid #2ab1ba;
   margin: 0 20px;
 }
+
+.logo-click:hover {
+  cursor: pointer;
+}

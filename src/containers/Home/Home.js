@@ -9,7 +9,7 @@ const Home = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
-  const [search, setSearch] = useState("");
+  const [search] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {

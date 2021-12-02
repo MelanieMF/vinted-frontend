@@ -17,7 +17,7 @@ const Publish = ({ token }) => {
   const [condition, setCondition] = useState("");
   const [city, setCity] = useState("");
   const [price, setPrice] = useState();
-  const [, setPreview] = useState();
+  // const [preview, setPreview] = useState();
 
   const navigate = useNavigate();
 
